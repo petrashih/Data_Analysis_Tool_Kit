@@ -45,7 +45,11 @@ def deviation_square(_a1, _a2):
 
 x = np.array(x1).T
 x = sm.add_constant(x)
+#y1 = y-np.average(y)
 results = sm.OLS(endog=y, exog=x).fit()
+#results = sm.OLS(endog=y, exog=x).fit_regularized(method='elastic_net', alpha=1.0, L1_wt=0.0)
+
+
 
 ######################
 ## Output results
